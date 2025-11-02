@@ -1,5 +1,5 @@
 ############################################################################
-# boards/arm/stm32h7/josh/src/Makefile
+# boards/arm/stm32h7/tracker/src/Makefile
 #
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
@@ -51,7 +51,7 @@ CSRCS += stm32_usb.c
 endif
 
 ifeq ($(CONFIG_BOARDCTL_RESET),y)	
-CSRCS += josh_reset.c
+CSRCS += tracker_reset.c
 endif
 
 include $(TOPDIR)/boards/Board.mk

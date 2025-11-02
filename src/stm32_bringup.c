@@ -1,5 +1,5 @@
 /****************************************************************************
- * boards/arm/stm32h7/josh/src/stm32_bringup.c
+ * boards/arm/stm32h7/tracker/src/stm32_bringup.c
  *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -34,7 +34,7 @@
 #include <nuttx/fs/fs.h>
 #include <nuttx/fs/partition.h>
 
-#include "josh.h"
+#include "tracker.h"
 
 #include "stm32.h"
 #include "stm32_gpio.h"
@@ -119,14 +119,14 @@ static void partition_handler(struct partition_s *part, void *arg) {
 #if defined(CONFIG_SENSORS_LSM6DSO32) && defined(CONFIG_SCHED_HPWORK)
 
 /****************************************************************************
- * Name: josh_lsm6dso32_gy_attach
+ * Name: tracker_lsm6dso32_gy_attach
  *
  * Description:
  *   Register and enable an interrupt for the LSM6DSO32 gyroscope interrupt.
  *
  ****************************************************************************/
 
-static int josh_lsm6dso32_gy_attach(xcpt_t handler, FAR void *arg) {
+static int tracker_lsm6dso32_gy_attach(xcpt_t handler, FAR void *arg) {
   int err = stm32_configgpio(GPIO_GY_INT);
   if (err < 0) {
     return err;
@@ -135,14 +135,14 @@ static int josh_lsm6dso32_gy_attach(xcpt_t handler, FAR void *arg) {
 }
 
 /****************************************************************************
- * Name: josh_lsm6dso32_xl_attach
+ * Name: tracker_lsm6dso32_xl_attach
  *
  * Description:
  *   Register and enable an interrupt for the LSM6DSO32 gyroscope interrupt.
  *
  ****************************************************************************/
 
-static int josh_lsm6dso32_xl_attach(xcpt_t handler, FAR void *arg) {
+static int tracker_lsm6dso32_xl_attach(xcpt_t handler, FAR void *arg) {
   int err = stm32_configgpio(GPIO_XL_INT);
   if (err < 0) {
     return err;
@@ -153,14 +153,14 @@ static int josh_lsm6dso32_xl_attach(xcpt_t handler, FAR void *arg) {
 
 #if defined(CONFIG_SENSORS_LIS2MDL) && defined(CONFIG_SCHED_HPWORK)
 /****************************************************************************
- * Name: josh_lis2mdl_attach
+ * Name: tracker_lis2mdl_attach
  *
  * Description:
  *   Register and enable an interrupt for the LIS2MDL magnetometer
  *
  ****************************************************************************/
 
-static int josh_lis2mdl_attach(xcpt_t handler, FAR void *arg) {
+static int tracker_lis2mdl_attach(xcpt_t handler, FAR void *arg) {
   int err = stm32_configgpio(GPIO_MAG_INT);
   if (err < 0) {
     return err;
@@ -283,8 +283,8 @@ int stm32_bringup(void) {
   };
 
 #ifdef CONFIG_SCHED_HPWORK
-  lsm6dso32_config.gy_attach = josh_lsm6dso32_gy_attach;
-  lsm6dso32_config.xl_attach = josh_lsm6dso32_xl_attach;
+  lsm6dso32_config.gy_attach = tracker_lsm6dso32_gy_attach;
+  lsm6dso32_config.xl_attach = tracker_lsm6dso32_xl_attach;
 #else
   lsm6dso32_config.gy_attach = NULL;
   lsm6dso32_config.xl_attach = NULL;
@@ -304,7 +304,7 @@ int stm32_bringup(void) {
   ret = lis2mdl_register(stm32_i2cbus_initialize(1), 0, 0x1e, NULL);
 #else
   ret = lis2mdl_register(stm32_i2cbus_initialize(1), 0, 0x1e,
-                         &josh_lis2mdl_attach);
+                         &tracker_lis2mdl_attach);
 #endif /* CONFIG_SCHED_HPWORK */
   if (ret < 0) {
     syslog(LOG_ERR, "Failed to register LIS2MDL: %d\n", ret);

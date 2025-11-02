@@ -1,5 +1,5 @@
 /****************************************************************************
- * boards/arm/stm32h7/josh/src/stm32_appinitialize.c
+ * boards/arm/stm32h7/tracker/src/stm32_appinitialize.c
  *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -28,7 +28,7 @@
 #include <sys/types.h>
 #include <nuttx/board.h>
 
-#include "josh.h"
+#include "tracker.h"
 
 /****************************************************************************
  * Pre-processor Definitions
@@ -65,7 +65,7 @@
 
 int board_app_initialize(uintptr_t arg)
 {
-  syslog(LOG_INFO, "Josh board app initialize.\n");
+  syslog(LOG_INFO, "Tracker board app initialize.\n");
 #ifdef CONFIG_BOARD_LATE_INITIALIZE
   /* Board initialization already performed by board_late_initialize() */
 

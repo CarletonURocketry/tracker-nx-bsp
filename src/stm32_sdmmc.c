@@ -1,5 +1,5 @@
 /****************************************************************************
- * boards/arm/stm32h7/josh/src/stm32_sdmmc.c
+ * boards/arm/stm32h7/tracker/src/stm32_sdmmc.c
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -37,7 +37,7 @@
 #include "stm32_gpio.h"
 #include "stm32_sdmmc.h"
 
-#include "josh.h"
+#include "tracker.h"
 
 /****************************************************************************
  * Pre-processor Definitions
@@ -45,7 +45,7 @@
 
 /* Configuration ************************************************************/
 
-/* Josh currently does not have card detection on PC13. Might be good for REVB
+/* Tracker currently does not have card detection on PC13. Might be good for REVB
  */
 
 #undef HAVE_NCD

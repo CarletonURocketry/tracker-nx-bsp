@@ -1,5 +1,5 @@
 # ##############################################################################
-# boards/arm/stm32h7/josh/src/CMakeLists.txt
+# boards/arm/stm32h7/tracker/src/CMakeLists.txt
 #
 # Licensed to the Apache Software Foundation (ASF) under one or more contributor
 # license agreements.  See the NOTICE file distributed with this work for
@@ -49,7 +49,7 @@ if(CONFIG_USBDEV)
 endif()
 
 if(CONFIG_BOARCTL_RESET)
-    list(APPEND SRCS josh_reset.c)
+    list(APPEND SRCS tracker_reset.c)
 endif()
 
 

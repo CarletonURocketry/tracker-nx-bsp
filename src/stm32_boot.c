@@ -1,5 +1,5 @@
 /****************************************************************************
- * boards/arm/stm32h7/josh/src/stm32_boot.c
+ * boards/arm/stm32h7/tracker/src/stm32_boot.c
  *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -31,7 +31,7 @@
 
 #include "arm_internal.h"
 #include "stm32_start.h"
-#include "josh.h"
+#include "tracker.h"
 
 /****************************************************************************
  * Public Functions

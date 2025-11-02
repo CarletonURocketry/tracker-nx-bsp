@@ -1,5 +1,5 @@
 /****************************************************************************
- * boards/arm/stm32h7/josh/src/stm32_adc.c
+ * boards/arm/stm32h7/tracker/src/stm32_adc.c
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -36,7 +36,7 @@
 #include "chip.h"
 #include "stm32_gpio.h"
 #include "stm32_adc.h"
-#include "josh.h"
+#include "tracker.h"
 
 /****************************************************************************
  * Pre-processor Definitions
@@ -44,7 +44,7 @@
 
 /* Configuration ************************************************************/
 
-/* Up to 3 ADC interfaces are supported, Josh only uses ADC2 */
+/* Up to 3 ADC interfaces are supported, Tracker only uses ADC2 */
 
 #if defined(CONFIG_STM32H7_ADC2)
 

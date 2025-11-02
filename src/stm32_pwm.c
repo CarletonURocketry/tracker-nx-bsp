@@ -1,5 +1,5 @@
 /****************************************************************************
- * boards/arm/stm32h7/josh/src/stm32_pwm.c
+ * boards/arm/stm32h7/tracker/src/stm32_pwm.c
  *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -34,7 +34,7 @@
 #include "chip.h"
 #include "arm_internal.h"
 #include "stm32_pwm.h"
-#include "josh.h"
+#include "tracker.h"
 
 /****************************************************************************
  * Pre-processor Definitions
@@ -73,7 +73,7 @@ int stm32_pwm_setup(void)
     {
       /* Get an instance of the PWM interface */
 
-      pwm = stm32_pwminitialize(JOSH_PWMTIMER);
+      pwm = stm32_pwminitialize(TRACKER_PWMTIMER);
       if (pwm == NULL)
         {
           tmrerr("ERROR: Failed to get the STM32 PWM lower half\n");

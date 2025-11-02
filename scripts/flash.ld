@@ -1,5 +1,5 @@
 /****************************************************************************
- * boards/arm/stm32h7/josh/scripts/flash.ld
+ * boards/arm/stm32h7/tracker/scripts/flash.ld
  *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with

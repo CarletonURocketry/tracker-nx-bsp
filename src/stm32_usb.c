@@ -1,5 +1,5 @@
 /****************************************************************************
- * boards/arm/stm32h7/josh/src/stm32_usb.c
+ * boards/arm/stm32h7/tracker/src/stm32_usb.c
  *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -41,7 +41,7 @@
 #include "chip.h"
 #include "stm32_gpio.h"
 #include "stm32_otg.h"
-#include "josh.h"
+#include "tracker.h"
 
 #ifdef CONFIG_STM32H7_OTGFS
 
@@ -56,12 +56,12 @@
 #  undef HAVE_USB
 #endif
 
-#ifndef CONFIG_JOSH_USBHOST_PRIO
-#  define CONFIG_JOSH_USBHOST_PRIO 100
+#ifndef CONFIG_TRACKER_USBHOST_PRIO
+#  define CONFIG_TRACKER_USBHOST_PRIO 100
 #endif
 
-#ifndef CONFIG_JOSH_USBHOST_STACKSIZE
-#  define CONFIG_JOSH_USBHOST_STACKSIZE 1024
+#ifndef CONFIG_TRACKER_USBHOST_STACKSIZE
+#  define CONFIG_TRACKER_USBHOST_STACKSIZE 1024
 #endif
 
 /****************************************************************************
@@ -199,8 +199,8 @@ int stm32_usbhost_initialize(void)
 
       uinfo("Start usbhost_waiter\n");
 
-      ret = kthread_create("usbhost", CONFIG_JOSH_USBHOST_PRIO,
-                           CONFIG_JOSH_USBHOST_STACKSIZE,
+      ret = kthread_create("usbhost", CONFIG_TRACKER_USBHOST_PRIO,
+                           CONFIG_TRACKER_USBHOST_STACKSIZE,
                            usbhost_waiter, NULL);
       return ret < 0 ? -ENOEXEC : OK;
     }

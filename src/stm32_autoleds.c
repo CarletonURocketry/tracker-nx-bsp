@@ -1,5 +1,5 @@
 /****************************************************************************
- * boards/arm/stm32h7/josh/src/stm32_autoleds.c
+ * boards/arm/stm32h7/tracker/src/stm32_autoleds.c
  *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -16,7 +16,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  *
- * TODO: change for number of LEDs on Josh
+ * TODO: change for number of LEDs on Tracker
  *
  ****************************************************************************/
 
@@ -35,7 +35,7 @@
 #include <arch/board/board.h>
 
 #include "stm32_gpio.h"
-#include "josh.h"
+#include "tracker.h"
 
 #ifdef CONFIG_ARCH_LEDS
 

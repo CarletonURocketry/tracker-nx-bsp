@@ -1,5 +1,5 @@
 /****************************************************************************
- * boards/arm/stm32h7/josh/src/stm32_reset.c
+ * boards/arm/stm32h7/tracker/src/stm32_reset.c
  *
  * SPDX-License-Identifier: Apache-2.0
  *

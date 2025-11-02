@@ -18,8 +18,8 @@
  *
  ****************************************************************************/
 
-#ifndef __BOARDS_ARM_STM32H7_JOSH_SRC_JOSH_H
-#define __BOARDS_ARM_STM32H7_JOSH_SRC_JOSH_H
+#ifndef __BOARDS_ARM_STM32H7_TRACKER_SRC_TRACKER_H
+#define __BOARDS_ARM_STM32H7_TRACKER_SRC_TRACKER_H
 
 /****************************************************************************
  * Included Files
@@ -99,7 +99,7 @@
 
 /* LED
  *
- * Josh has three software controllable LEDs on board:
+ * Tracker has three software controllable LEDs on board:
  *   - Started: Green LED to indicate startup
  *   - Panic: Red LED to indicate panic state
  *   - Eject: Green LED to indicate when SD card can be removed safely
@@ -134,10 +134,10 @@
    GPIO_PIN15)
 
 /* Buzzer
- * Josh has an arming buzzer to indicate when it is armed and running.
+ * Tracker has an arming buzzer to indicate when it is armed and running.
  */
 
-#define JOSH_PWMTIMER 1
+#define TRACKER_PWMTIMER 1
 
 /* PWM output at buzzer, which is PE13 */
 
@@ -146,7 +146,7 @@
 #if defined(CONFIG_STM32H7_TIM1_PWM)
 
 #if !defined(CONFIG_STM32H7_TIM1_PWM)
-#error "Josh requires CONFIG_STM32H7_TIM1_PWM to have PWM"
+#error "Tracker requires CONFIG_STM32H7_TIM1_PWM to have PWM"
 #endif
 
 #if CONFIG_STM32H7_TIM1_CHANNEL != 3 || !defined(CONFIG_STM32H7_TIM1_CH3OUT)
@@ -233,4 +233,4 @@ int stm32_dev_gpio_init(void);
 int stm32_adc_setup(void);
 #endif
 
-#endif /* __BOARDS_ARM_STM32H7_JOSH_SRC_JOSH_H */
+#endif /* __BOARDS_ARM_STM32H7_TRACKER_SRC_TRACKER_H */

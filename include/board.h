@@ -1,5 +1,5 @@
 /****************************************************************************
- * boards/arm/stm32h7/josh/include/board.h
+ * boards/arm/stm32h7/tracker/include/board.h
  *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -18,8 +18,8 @@
  *
  ****************************************************************************/
 
-#ifndef __BOARDS_ARM_STM32H7_JOSH_INCLUDE_BOARD_H
-#define __BOARDS_ARM_STM32H7_JOSH_INCLUDE_BOARD_H
+#ifndef __BOARDS_ARM_STM32H7_TRACKER_INCLUDE_BOARD_H
+#define __BOARDS_ARM_STM32H7_TRACKER_INCLUDE_BOARD_H
 
 /****************************************************************************
  * Included Files
@@ -404,4 +404,4 @@ extern "C"
 #endif
 
 #endif /* __ASSEMBLY__ */
-#endif /* __BOARDS_ARM_STM32H7_JOSH_INCLUDE_BOARD_H */
+#endif /* __BOARDS_ARM_STM32H7_TRACKER_INCLUDE_BOARD_H */

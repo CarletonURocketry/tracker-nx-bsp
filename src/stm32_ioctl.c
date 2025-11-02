@@ -1,5 +1,5 @@
 /****************************************************************************
- * boards/arm/stm32h7/josh/src/stm32_ioctl.c
+ * boards/arm/stm32h7/tracker/src/stm32_ioctl.c
  *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
@@ -30,7 +30,7 @@
 
 #include <nuttx/board.h>
 
-#include "josh.h"
+#include "tracker.h"
 
 #ifdef CONFIG_BOARDCTL_IOCTL
 
