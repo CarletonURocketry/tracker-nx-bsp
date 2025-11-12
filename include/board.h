@@ -338,11 +338,6 @@
 #define GPIO_I2C2_SCL   (GPIO_I2C2_SCL_1 | GPIO_SPEED_100MHz)  /* PB10 */
 #define GPIO_I2C2_SDA   (GPIO_I2C2_SDA_1 | GPIO_SPEED_100MHz)  /* PB11 */
 
-/* I2C4 on PD12 & PD13 */
-
-#define GPIO_I2C4_SCL   (GPIO_I2C4_SCL_1 | GPIO_SPEED_100MHz)  /* PB12 */
-#define GPIO_I2C4_SDA   (GPIO_I2C4_SDA_1 | GPIO_SPEED_100MHz)  /* PB13 */
-
 /* OTGFS */
 
 #define GPIO_OTGFS_DM  (GPIO_OTGFS_DM_0|GPIO_SPEED_100MHz) /* PA11 */
@@ -361,6 +356,11 @@
 /* PWM output at buzzer, which is PE13 */
 
 #define GPIO_TIM1_CH3OUT GPIO_TIM1_CH3OUT_2
+
+/* PWM output for PD12 and PD13 */
+
+#define GPIO_TIM4_CH1OUT GPIO_TIM4_CH1OUT_2
+#define GPIO_TIM4_CH2OUT GPIO_TIM4_CH2OUT_2
 
 
 /* SDMMC definitions ********************************************************/
