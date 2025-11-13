@@ -29,6 +29,8 @@
 #include <nuttx/arch.h>
 #include <nuttx/board.h>
 
+#include "tracker.h"
+
 #ifdef CONFIG_BOARDCTL_RESET
 
 /****************************************************************************

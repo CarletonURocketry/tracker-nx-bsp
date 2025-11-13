@@ -72,8 +72,8 @@ int stm32_pwm_setup(void)
   if (!initialized)
     {
       /* Get an instance of the PWM interface */
-
-      pwm = stm32_pwminitialize(TRACKER_PWMTIMER);
+ #if defined(CONFIG_STM32H7_TIM1_PWM)
+      pwm = stm32_pwminitialize(1);
       if (pwm == NULL)
         {
           tmrerr("ERROR: Failed to get the STM32 PWM lower half\n");
@@ -82,7 +82,7 @@ int stm32_pwm_setup(void)
 
       /* Register the PWM driver at "/dev/pwm0" */
 
- #if defined(CONFIG_STM32H7_TIM1_PWM)
+
       ret = pwm_register("/dev/pwm0", pwm);
       if (ret < 0)
         {
@@ -90,6 +90,26 @@ int stm32_pwm_setup(void)
           return ret;
         }
 #endif
+
+#if defined(CONFIG_STM32H7_TIM4_PWM)
+      pwm = stm32_pwminitialize(4);
+      if (pwm == NULL)
+        {
+          tmrerr("ERROR: Failed to get the STM32 PWM lower half\n");
+          return -ENODEV;
+        }
+
+      /* Register the PWM driver at "/dev/pwm0" */
+
+
+      ret = pwm_register("/dev/pwm1", pwm);
+      if (ret < 0)
+        {
+          tmrerr("ERROR: pwm_register failed: %d\n", ret);
+          return ret;
+        }
+#endif
+
 
       /* Now we are initialized */
 
